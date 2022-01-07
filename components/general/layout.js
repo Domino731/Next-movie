@@ -6,6 +6,7 @@ import {
   Avatar,
   Badge,
 } from "@material-ui/core";
+import { DiscoverList } from "./discover";
 const useStyles = makeStyles({
   paperWidth: {
     width: "20%",
@@ -68,6 +69,9 @@ export const Layout = ({ children }) => {
               Will Smith
             </Typography>
           </Grid>
+
+
+          <DiscoverList/>
         </Drawer>
       </Grid>
     </Grid>
