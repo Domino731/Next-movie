@@ -7,6 +7,7 @@ import {
   Badge,
 } from "@material-ui/core";
 import { DiscoverList } from "./discover";
+import { Options } from "./options";
 const useStyles = makeStyles({
   paperWidth: {
     width: "20%",
@@ -72,6 +73,7 @@ export const Layout = ({ children }) => {
 
 
           <DiscoverList/>
+          <Options/>
         </Drawer>
       </Grid>
     </Grid>

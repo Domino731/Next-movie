@@ -40,7 +40,6 @@ const useStyles = makeStyles(() => ({
     <Link href='/'>
     <ListItem
       style={{ width: "100%" }}
-      className={classes.listItemWrapper}
     >
       <ListItemIcon>{<Icon />}</ListItemIcon>
       <ListItemText primary={title} />
@@ -67,7 +66,7 @@ export const DiscoverList = () => {
         align="left"
         style={{ display: "flex", justifyContent: "start" }}
       >
-        {isOpen ? <ExpandLess /> : <ExpandMore />} Click
+       Discover {isOpen ? <ExpandLess /> : <ExpandMore />} 
       </Button>
       <Collapse in={isOpen} timeout="auto" unmountOnExit>
         <List component="ul" disablePadding>
@@ -75,8 +74,6 @@ export const DiscoverList = () => {
             title="Discover"
             icon={() => (
               <ManageSearchIcon
-                iconBgColor="red"
-                iconColor="red"
                 style={{ fill: "#ef476f" }}
               />
             )}
@@ -88,8 +85,6 @@ export const DiscoverList = () => {
             icon={() => (
               <SubscriptionsIcon
                 style={{ fill: "#ffd166" }}
-                iconBgColor="red"
-                iconColor="red"
               />
             )}
             color="#ffd166"
@@ -98,8 +93,6 @@ export const DiscoverList = () => {
             title="Downloads"
             icon={() => (
               <DownloadIcon
-                iconBgColor="red"
-                iconColor="red"
                 style={{ fill: "#06d6a0" }}
               />
             )}
@@ -109,8 +102,6 @@ export const DiscoverList = () => {
             title="Favorite"
             icon={() => (
               <FavoriteIcon
-                iconBgColor="red"
-                iconColor="red"
                 style={{ fill: "#118ab2" }}
               />
             )}
@@ -120,8 +111,6 @@ export const DiscoverList = () => {
             title="Notifications"
             icon={() => (
               <NotificationsIcon
-                iconBgColor="red"
-                iconColor="red"
                 style={{ fill: "#8338ec" }}
               />
             )}
