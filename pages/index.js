@@ -1,26 +1,44 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Container } from '../styledComponents/general'
-import {Layout} from '../components/general/layout';
-import { Typography } from '@material-ui/core';
-import {url} from "../fetch/constans";
-
+import Head from "next/head";
+import Image from "next/image";
+import { Container } from "../styledComponents/general";
+import { Layout } from "../components/general/layout";
+import { Typography } from "@material-ui/core";
+import { url } from "../fetch/constans";
+import { connect, Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "../redux/reducers/allReducers";
+import { changeMovieGenres } from "../redux/actions/changeMovieGenres";
+import { useEffect } from "react";
 
 const styles = {
   container: {
-    height: '100vh'
-  }
-}
-export default function Home({genres}) {
-  console.log(genres)
+    height: "100vh",
+  },
+};
+
+function Home({ genres, changeMovies }) {
+
+  useEffect(() => {
+    changeMovies(genres)
+  }, [])
+
   return (
     <div style={styles.container}>
       <Layout>
-           <Typography>ello</Typography>
+        <Typography>ello</Typography>
       </Layout>
     </div>
-  )
+  );
 }
+
+
+
+
+const mapDispatchToProps = (dispatch) => ({
+  changeMovies: (data) => dispatch(changeMovieGenres(data)),
+});
+export default connect(null, mapDispatchToProps)(Home);
+
 
 
 
@@ -32,7 +50,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-         genres: data.genres
-    }
-  }
-}
+      genres: data.genres,
+    },
+  };
+};
